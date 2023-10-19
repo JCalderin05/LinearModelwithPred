@@ -16,6 +16,30 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 ```
 
 
+
+## Model1
+Find an equation that expresses SIMS as a function of ARM strength.
+
+## Results
+
+### Graphical Results
+
+```{r}
+plot(SIMS~ARM, data=data)
+```
+
+As arm strength increases, the sim score also increases. This is a positive trend in arm strength and sim score.
+
+### Numerical Results
+
+```{r}
+cor(data$ARM, data$SIMS)
+```
+
+We have a positive correlation of 0.68 which gives a little bit of scatter. 
+
+### Inference
+
 ```{r}
 Model1 = lm(SIMS~ARM, data = data)
 print(summary(Model1))
@@ -23,6 +47,8 @@ print(summary(Model1))
 
 
 ```{r}
-plot(data$SIMS,data$ARM)
+plot(SIMS~ARM, data=data)
+abline(Model1, col='blue')
 ```
 
+The line in the plot shows an increase of 1 in arm strength, sim increases by 0.0545.
