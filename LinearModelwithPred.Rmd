@@ -51,7 +51,13 @@ plot(SIMS~ARM, data=data)
 abline(Model1, col='blue')
 ```
 
-The line in the plot shows an increase of 1 in arm strength, sim increases by 0.0545.
+The line shows the best linear fit. It shows an increase of 1 in arm strength, with sim increasing by 0.0545.
+
+
+```{r}
+newdata = data.frame(ARM = 88, GRIP = 94)
+predict.lm(Model1, newdata, interval= 'prediction')
+```
 
 
 ## Model2
@@ -88,6 +94,11 @@ plot(SIMS~GRIP, data=data)
 abline(Model2, col='Red')
 ```
 
-The line shows that there is an increase of 1 grip strength for every 0.0454 sim score.
+The line shows the best linear fit. It shows that there is an increase of 1 grip strength for every 0.0454 sim score.
+
+```{r}
+newdata = data.frame(ARM = 88, GRIP = 94)
+predict.lm(Model2, newdata, interval= 'prediction')
+```
 
 
