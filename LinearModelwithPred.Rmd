@@ -52,3 +52,42 @@ abline(Model1, col='blue')
 ```
 
 The line in the plot shows an increase of 1 in arm strength, sim increases by 0.0545.
+
+
+## Model2
+
+Find an equation that expresses SIMS as a function of GRIP strength.
+
+## Results
+
+### Graphical Results
+
+```{r}
+plot(SIMS~GRIP, data=data)
+```
+
+As grip strength increases, sim scores increases. There is a positve trend in grip strength to sim scores.
+
+### Numerical Results
+
+```{r}
+cor(data$GRIP, data$SIMS)
+```
+
+There is a positive correlation of 0.63 which causes some scatter.
+
+### Inference Results 
+
+```{r}
+Model2 = lm(SIMS~GRIP, data = data)
+print(summary(Model2))
+```
+
+```{r}
+plot(SIMS~GRIP, data=data)
+abline(Model2, col='Red')
+```
+
+The line shows that there is an increase of 1 grip strength for every 0.0454 sim score.
+
+
